@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
+
+<h1>{{question}}</h1>
+
+<form action="/answer">
+  {% for choice in choices %}
+  <div>
+    <input type="checkbox" name="answer" value="{{choice}}" />
+    <label>{{choice}}</label>
+  </div>
+
+  {% endfor %}
+  <button>Submit!</button>
+</form>
+
+{% endblock %}
